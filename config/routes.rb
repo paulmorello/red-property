@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   get '/', to: 'listings#index'
 
-  get '/flatmates', to: 'listings#flatmates'
+  get '/sharehouses', to: 'listings#sharehouses'
+  get '/longterm', to: 'listings#longterm'
 
   resources :listings
 

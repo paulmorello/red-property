@@ -2,20 +2,22 @@
 <div class="home-wrapper">
   <section class="home-wrapper-left">
     <div class="home-left-search-area">
-      <%= form_tag "/flatmates", method: "get"  do %>
+      <%= form_tag "/sharehouses", method: "get"  do %>
         <input type="text" name="city" value="" placeholder="Search by city">
-        <button>Search</button>
+        <button>Search Share houses</button>
+      <% end %>
+
+      <%= form_tag "/longterm", method: "get"  do %>
+        <input class="input" type="text" name="city" value="" placeholder="Search by city">
+        <button id="long-term-search">Search Long Term Rentals</button>
       <% end %>
     </div>
 
     <div class="home-left-listing-display">
-      <% @flatmates_listings.each do |listing| %>
-        <img src="<%= listing.photo-url %>" alt="">
-        <h2><%= listing.title %></h2>
-      <% end %>
     </div>
   </section>
 
   <section class="home-wrapper-right">
+    <div id="map"></div>
   </section>
 </div>

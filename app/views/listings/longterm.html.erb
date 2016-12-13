@@ -1,0 +1,34 @@
+<div class="home-wrapper">
+  <section class="home-wrapper-left">
+    <div class="home-left-search-area">
+      <%= form_tag "/sharehouses", method: "get"  do %>
+        <input class="input" type="text" name="city" value="" placeholder="Search by city">
+        <button id="share-search">Search Sharehouses</button>
+      <% end %>
+
+      <%= form_tag "/longterm", method: "get"  do %>
+        <input class="input" type="text" name="city" value="" placeholder="Search by city">
+        <button id="long-term-search">Search Long Term Rentals</button>
+      <% end %>
+    </div>
+
+    <div class="home-left-listing-display">
+      <% @longterm_listings.each do |listing| %>
+        <div class="home-display-card">
+          <div class="home-img-card">
+            <img src="<%= listing['photo-url'] %>" alt="">
+          </div>
+          <div class="home-content-card">
+            <h2><%= listing['city'] %></h2>
+            <p>Bed: <%= listing['bed'] %>, Bath: <%= listing['bath'] %>, Car: <%= listing['car'] %></p>
+            <h3><%= listing['cost'] %></h3>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </section>
+
+  <section class="home-wrapper-right">
+    <div id="map"></div>
+  </section>
+</div>

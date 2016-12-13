@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RedProperty</title>
+    <title>Red Property</title>
     <%= csrf_meta_tags %>
 
     <!-- Latest compiled and minified CSS -->
@@ -15,10 +15,12 @@
   </head>
 
   <body>
-    
+
     <!-- Navigation -->
     <%= render 'layouts/navbar' %>
 
     <%= yield %>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvDpqfmH02cwlCdz91pzSpPZ6omFlH6ao&callback=initMap"></script>
   </body>
 </html>
