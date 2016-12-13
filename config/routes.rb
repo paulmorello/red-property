@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get '/', to: 'listings#index'
 
+  get '/flatmates', to: 'listings#flatmates'
+
   resources :listings
 
 end

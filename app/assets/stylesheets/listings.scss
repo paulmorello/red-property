@@ -5,3 +5,16 @@
   width: 140px;
   color: #CF4531;
 }
+
+.home-wrapper {
+  padding: 5%;
+
+  .home-left-search-area {
+    padding: 5%;
+    border-bottom: 1px solid grey;
+
+    input {
+      width: 30em;
+    }
+  }
+}
