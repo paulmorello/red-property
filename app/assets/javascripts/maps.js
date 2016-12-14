@@ -1,5 +1,7 @@
 
 var map;
+var lat;
+var long;
 
 function initMap() {
 
@@ -56,20 +58,14 @@ function initMap() {
     }
   ];
 
-  var userLat, userLong, userAccuracy;
-  // find users current position
-  navigator.geolocation.getCurrentPosition(function(location) {
-    userLat = location.coords.latitude;
-    userLong = location.coords.longitude;
-    userAccuracy = location.coords.accuracy;
-  });
 
   // Constructor creates a new map - only center and zoom are required.
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -37.8140000, lng: 144.9633200},
+    center: { lat: -37.8140000, lng: 144.9633200 },
     zoom: 13,
     styles: styles,
     mapTypeControl: false
   });
+
 
 }

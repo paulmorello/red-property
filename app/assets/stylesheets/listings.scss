@@ -7,45 +7,56 @@
 }
 
 .home-wrapper {
-  padding: 2em;
   width: 100%;
+  height: 100vh;
 
-  .home-left-search-area {
+  .home-wrapper-left {
     width: 60%;
-    padding: 5%;
-    border-bottom: 1px solid grey;
-    border-right: 1px solid black;
+    height: 100%;
+    float: left;
 
-    input {
-      width: 30em;
-    }
-  }
+    .home-left-search-area {
+      height: 28%;
+      width: 100%;
+      padding: 7em 3em 0 3em;
+      border-bottom: 1px solid grey;
+      border-right: 1px solid black;
 
-  .home-left-listing-display {
-    width: 60%;
-    padding: 1em;
-    border-right: 1px solid black;
-
-    .home-display-card {
-      border: 1px solid black;
-      margin-bottom: 1em;
-
-      .home-img-card {
-        width: 40%;
-        display: inline-block;
-        vertical-align: middle;
+      input {
+        width: 30em;
       }
+    }
 
-      .home-content-card {
-        width: 55%;
-        display: inline-block;
-        vertical-align: middle;
+    .home-left-listing-display {
+      width: 100%;
+      height: 72%;
+      padding: 1em;
+      border-right: 1px solid black;
+      overflow: auto;
+
+      .home-display-card {
+        border: 1px solid black;
+        margin-bottom: 1em;
+
+        .home-img-card {
+          width: 40%;
+          display: inline-block;
+          vertical-align: middle;
+        }
+
+        .home-content-card {
+          width: 55%;
+          display: inline-block;
+          vertical-align: middle;
+        }
       }
     }
   }
 
   .home-wrapper-right {
     width: 40%;
+    height: 100%;
+    float: right;
 
     #map {
       width: 100%;
