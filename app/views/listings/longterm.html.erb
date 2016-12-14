@@ -3,12 +3,12 @@
     <div class="home-left-search-area">
       <%= form_tag "/sharehouses", method: "get"  do %>
         <input class="input" type="text" name="city" value="" placeholder="Search by city">
-        <button id="share-search">Search Sharehouses</button>
+        <button id="share-search" class="places-search">Search Sharehouses</button>
       <% end %>
 
       <%= form_tag "/longterm", method: "get"  do %>
         <input class="input" type="text" name="city" value="" placeholder="Search by city">
-        <button id="long-term-search">Search Long Term Rentals</button>
+        <button id="long-term-search" class="places-search">Search Long Term Rentals</button>
       <% end %>
     </div>
 

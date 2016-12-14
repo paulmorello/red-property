@@ -3,6 +3,9 @@ var map;
 var lat;
 var long;
 
+// empty array for property markers
+var markers = [];
+
 function initMap() {
 
    var styles =[{
@@ -58,14 +61,23 @@ function initMap() {
     }
   ];
 
+  // Style the markers a bit. This will be our listing marker icon.
+  var defaultIcon = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Home_icon.svg/35px-Home_icon.svg.png";
 
+  var melbourne = { lat: -37.8140000, lng: 144.9633200 }
   // Constructor creates a new map - only center and zoom are required.
   map = new google.maps.Map(document.getElementById('map'), {
-    center: { lat: -37.8140000, lng: 144.9633200 },
-    zoom: 13,
+    center: melbourne,
+    zoom: 10,
     styles: styles,
     mapTypeControl: false
   });
 
+  var marker = new google.maps.Marker({
+     position: melbourne,
+     map: map,
+     animation: google.maps.Animation.DROP,
+     icon: defaultIcon
+   });
 
 }
