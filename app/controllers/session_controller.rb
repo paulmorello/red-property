@@ -11,13 +11,13 @@ class SessionController < ApplicationController
 
       redirect_to "/"
     else
-      redirect_to session_new_path
+      redirect_to '/'
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to session_new_path
+    redirect_to '/'
   end
 
 end
