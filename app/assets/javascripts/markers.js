@@ -5,6 +5,26 @@ var city;
 var newLat;
 var newLng;
 
+window.onload = function() {
+  markers = [];
+  geocoder = new google.maps.Geocoder();
+
+  // getting city names from each property card
+  var locations = $('div.home-content-card h2 a')
+
+  // iterate through locations and push into markers array
+  for (var i = 0; i < locations.length; i++) {
+    if (markers.includes(locations[i].innerHTML)) {
+      continue;
+    } else {
+      markers.push(locations[i].innerHTML)
+    }
+  }
+  console.log(markers);
+  codeAddress();
+
+}
+
 function codeAddress() {
 
   // set default icon
@@ -35,24 +55,4 @@ function codeAddress() {
       }
     });
   }
-}
-
-window.onload = function() {
-  markers = [];
-  geocoder = new google.maps.Geocoder();
-
-  // getting city names from each property card
-  var locations = $('div.home-content-card h2')
-
-  // iterate through locations and push into markers array
-  for (var i = 0; i < locations.length; i++) {
-    if (markers.includes(locations[i].innerHTML)) {
-      continue;
-    } else {
-      markers.push(locations[i].innerHTML)
-    }
-  }
-  console.log(markers);
-  codeAddress();
-
 }
