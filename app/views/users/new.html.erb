@@ -1,0 +1,13 @@
+
+<div class="sign-up-wrapper">
+  <h1>Sign Up</h1>
+
+  <%= form_tag "/users", method: "post" do %>
+
+    <input type="email" name="email" placeholder="Email">
+    <input type="text" name="username" placeholder="Username">
+    <input type="password" name="password" placeholder="Password">
+    <button>Sign Up</button>
+
+  <% end %>
+</div>

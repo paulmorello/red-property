@@ -3,9 +3,13 @@ Rails.application.routes.draw do
 
   get '/', to: 'listings#index'
 
+  get '/session/new', to: 'session#new'
+  post '/session', to: 'session#create'
+  delete '/session', to: 'session#destroy'
+
   get '/sharehouses', to: 'listings#sharehouses'
   get '/longterm', to: 'listings#longterm'
 
-  resources :listings
+  resources :listings, :users
 
 end
