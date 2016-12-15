@@ -1,7 +1,5 @@
 
 var map;
-var lat;
-var long;
 
 // empty array for property markers
 var markers = [];
@@ -67,8 +65,8 @@ function initMap() {
   var melbourne = { lat: -37.8140000, lng: 144.9633200 }
   // Constructor creates a new map - only center and zoom are required.
   map = new google.maps.Map(document.getElementById('map'), {
-    center: melbourne,
-    zoom: 10,
+    center: new google.maps.LatLng(melbourne),//Setting Initial Position,
+    zoom: 9,
     styles: styles,
     mapTypeControl: false
   });

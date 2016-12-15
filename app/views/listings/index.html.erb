@@ -2,14 +2,14 @@
 <div class="home-wrapper">
   <section class="home-wrapper-left">
     <div class="home-left-search-area">
-      <%= form_tag "/sharehouses", method: "get"  do %>
-        <input type="text" name="city" value="" placeholder="Search by city">
-        <button>Search Share houses</button>
-      <% end %>
 
-      <%= form_tag "/longterm", method: "get"  do %>
+      <%= form_tag "#", method: "get" do %>
+        <select name="search" id="search">
+          <option value="sharehouses"> Share Houses</option>
+          <option value="longterm"> Long-Term Listings</option>
+        </select>
         <input class="input" type="text" name="city" value="" placeholder="Search by city">
-        <button id="long-term-search">Search Long Term Rentals</button>
+        <button id="search-type" class="places-search">Search</button>
       <% end %>
     </div>
 
