@@ -1,7 +1,7 @@
 class ListingsController < ApplicationController
 
   def index
-    
+
   end
 
   def sharehouses
@@ -16,6 +16,9 @@ class ListingsController < ApplicationController
     flatmates_results = parse_page.css('div#search-results div.content-column')
     flatmates_results.each do |item|
       result = {}
+
+      # locating page-url to link result to
+      result['page-url'] = 'https://flatmates.com.au' + item.search('a.link')[0]['href']
 
       result['photo-url'] = item.search('a.hero img')[0]['src']
       result['cost'] = item.search('div.ribbon')[0].text.tr('New|','').strip
@@ -48,6 +51,9 @@ class ListingsController < ApplicationController
     longterm_results = parse_page.css('div#main.main li.strap')
     longterm_results.each do |item|
       result = {}
+
+      # locating page-url to link result to
+      result['page-url'] = 'https://www.domain.com.au' + item.search('a.listing-result__listing')[0]['href']
 
       result['photo-url'] = item.search('img')[0]['src']
       result['cost'] = item.search('div.listing-result__property-details p')[0].text
