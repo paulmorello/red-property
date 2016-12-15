@@ -19,13 +19,9 @@
             <li>
                 <a href="/users/<%= current_user.id %>">My Profile</a>
             </li>
-            <li>
-                <a href="/languages">Play</a>
-            </li>
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" role="button"><%= current_user.username %><span class="caret"></span></a>
               <ul class="dropdown-menu">
-
                 <li>
                   <form action="/users/<%= current_user.id %>/edit" method="get">
                     <button class="btn btn-default">User details</button>
@@ -33,7 +29,7 @@
                 </li>
                 <li>
                   <%= form_tag("/session", method: "delete") do %>
-                    <button class="btn btn-default">Log out (<%= current_user['name'] %>)</button>
+                    <button class="btn btn-default">Log out</button>
                   <% end %>
                 </li>
               </ul>
@@ -48,7 +44,7 @@
               <a href="/users/new">Sign up</a>
             </li>
             <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" role="button">Log in <span class="caret"></span></a>
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button">Log in<span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <%= form_tag "/session", method: "post" do %>
                   <input name="email" type="text" class="form-control" placeholder="email">
